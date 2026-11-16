@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Dadi Ki Rasoi logo">
+  <style>
+    .dl-steam path{stroke-dasharray:14 40;animation:dl-steam 3s linear infinite}
+    .dl-steam path:nth-child(2){animation-delay:-1s}
+    .dl-steam path:nth-child(3){animation-delay:-2s}
+    .dl-heart{transform-origin:60px 91px;animation:dl-beat 1.6s ease-in-out infinite}
+    @keyframes dl-steam{from{stroke-dashoffset:54}to{stroke-dashoffset:0}}
+    @keyframes dl-beat{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+    @media (prefers-reduced-motion:reduce){.dl-steam path,.dl-heart{animation:none}}
+  </style>
+  <defs><radialGradient id="dlBg" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#f6a93a"/><stop offset="1" stop-color="#e8840c"/></radialGradient></defs>
+  <circle cx="60" cy="60" r="56" fill="url(#dlBg)"/><circle cx="60" cy="60" r="56" fill="none" stroke="#fff8ec" stroke-width="3"/><circle cx="60" cy="60" r="50" fill="none" stroke="#fff8ec" stroke-opacity=".5" stroke-width="1" stroke-dasharray="2 4"/>
+  <g class="dl-steam" fill="none" stroke="#fff8ec" stroke-width="3.5" stroke-linecap="round"><path d="M46 42 C40 36 52 32 46 26 C42 22 48 18 46 15"/><path d="M60 40 C54 34 66 30 60 24 C56 20 62 16 60 13"/><path d="M74 42 C68 36 80 32 74 26 C70 22 76 18 74 15"/></g>
+  <g><path d="M36 68 C36 50 84 50 84 68 Z" fill="#fff8ec"/><circle cx="60" cy="52" r="4.5" fill="#7a1f1f"/></g>
+  <path d="M35 80 C24 80 24 92 35 92" fill="none" stroke="#7a1f1f" stroke-width="4.5" stroke-linecap="round"/><path d="M85 80 C96 80 96 92 85 92" fill="none" stroke="#7a1f1f" stroke-width="4.5" stroke-linecap="round"/><path d="M36 74 C36 102 50 108 60 108 C70 108 84 102 84 74 Z" fill="#7a1f1f"/><rect x="32" y="66" width="56" height="8" rx="4" fill="#5d1414"/><path d="M40 78.5 H80" stroke="#fff8ec" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1 5"/><path class="dl-heart" d="M60 100 C47 91 51 82 57 84 C59 85 60 86 60 87 C60 86 61 85 63 84 C69 82 73 91 60 100 Z" fill="#fff8ec"/>
+</svg>

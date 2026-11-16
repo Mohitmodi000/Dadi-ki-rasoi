@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Checkout | Dadi Ki Rasoi{% endblock %}
+
+{% block content %}
+<main class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-7 col-xl-6">
+      <div class="card border-0 shadow">
+        <div class="card-body p-4 p-md-5">
+          <span class="section-tag">Checkout</span>
+          <h1 class="section-title">Where should we deliver?</h1>
+          <p class="text-muted">Enter your name, phone number, and delivery address. Fields marked * are required.</p>
+          <div class="alert alert-warning small" role="note">
+            <i class="bi bi-bicycle me-1"></i><strong>Delivery charges:</strong> ₹50 within 5 km and ₹100 for deliveries beyond 10 km.
+          </div>
+
+          <form method="post" id="checkoutForm">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+              <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+            {% endif %}
+
+            {% for field in form %}
+              <div class="mb-3">
+                <label class="form-label" for="{{ field.id_for_label }}">
+                  {{ field.label }}{% if field.field.required %} *{% endif %}
+                </label>
+                {{ field }}
+                {% for error in field.errors %}
+                  <div class="text-danger small mt-1">{{ error }}</div>
+                {% endfor %}
+              </div>
+            {% endfor %}
+
+            <button class="btn btn-brand w-100" type="submit">Place Order</button>
+          </form>
+          {% if request.GET.ordered %}
+            <div id="checkoutSuccess" hidden></div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
